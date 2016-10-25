@@ -1,21 +1,24 @@
 public class PQFormel {
+
 	public static void main(String[] args) {
-		// Initialisierung der Werte für p und q
-		double q = 15;
-		double p = 8;
+		double p = 0;
+		double q = 0;
 
-		// Berechnung des Terms unter der Wurzel
-		double unterDerWurzel = ((p / 2) * (p / 2)) - q;
-		// Berechnung des Terms vor der Wurzel
-		double vorDerWurzel = -1 * p / 2;
+		double udw = ((p * p / 4) - q);
+		double vdw = -1 * p / 2;
+		if (udw < 0) {
+			System.out.println("keine Loesung");
+		} else {
+			if (udw == 0) {
+				double loesung1 = vdw + Math.sqrt(udw);
+				System.out.println("x1= x2 = " + loesung1);
+			} else {
+				double loesung1 = vdw + Math.sqrt(udw);
+				double loesung2 = vdw - Math.sqrt(udw);
+				System.out.println("x1= " + loesung1);
+				System.out.println("x2= " + loesung2);
+			}
 
-		// Berechnung der 2 Lösungen
-		double loesung1 = vorDerWurzel + Math.sqrt(unterDerWurzel);
-		double loesung2 = vorDerWurzel - Math.sqrt(unterDerWurzel);
-
-		// Ausgabe der Lösungen
-		System.out.println("x1 = " + loesung1);
-		System.out.println("x2 = " + loesung2);
-
+		}
 	}
 }
